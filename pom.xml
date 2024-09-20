@@ -134,6 +134,8 @@
 				<finalName>${project.artifactId}-${project.version}-DEV</finalName>
 			</build>
 			<properties>
+				<artifactId>commons-dev</artifactId> <!-- Artifact ID para desarrollo -->
+				<project.version>0.0.1-SNAPSHOT</project.version>
 				<project.version>${dev.version}</project.version>
 			</properties>
 		</profile>
@@ -151,6 +153,8 @@
 				<finalName>${project.artifactId}-${project.version}-PROD</finalName>
 			</build>
 			<properties>
+				<artifactId>commons-prod</artifactId> <!-- Artifact ID para producción -->
+				<project.version>0.0.1</project.version>
 				<project.version>${prod.version}</project.version>
 			</properties>
 		</profile>
