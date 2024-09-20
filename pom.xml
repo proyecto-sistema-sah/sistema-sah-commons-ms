@@ -59,35 +59,7 @@
 		<java.version>22</java.version>
 		<org.mapstruct.version>1.6.2</org.mapstruct.version>
 	</properties>
-	<profiles>
-		<!-- Perfil para la rama dev -->
-		<profile>
-			<id>development</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>dev</value>
-				</property>
-			</activation>
-			<properties>
-				<project.version>${dev.version}</project.version>
-			</properties>
-		</profile>
 
-		<!-- Perfil para la rama main (producción) -->
-		<profile>
-			<id>production</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>prod</value>
-				</property>
-			</activation>
-			<properties>
-				<project.version>${prod.version}</project.version>
-			</properties>
-		</profile>
-	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
@@ -148,5 +120,27 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<!-- Perfil para la rama dev -->
+		<profile>
+			<id>development</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>dev</value>
+				</property>
+			</activation>
+		</profile>
 
+		<!-- Perfil para la rama main (producción) -->
+		<profile>
+			<id>production</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>prod</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
 </project>
