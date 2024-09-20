@@ -1,7 +1,9 @@
 package com.sistema.sah.commons.entity;
 
+import com.sistema.sah.commons.helper.enums.EstadoCuartoServicioEnum;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.ColumnDefault;
 
 @Data
 @Entity
@@ -13,11 +15,9 @@ public class EstadoCuartoServicioEntity {
     @Column(name = "id_estado_cuarto_servicio", nullable = false)
     private Integer id;
 
-/*
- TODO [Reverse Engineering] create field to map the 'nombre_estado_servicio' column
- Available actions: Define target Java type | Uncomment as is | Remove column mapping
+    @Enumerated(EnumType.STRING) // Almacenar el valor como una cadena de texto en la base de datos
     @ColumnDefault("'ACTIVO'")
     @Column(name = "nombre_estado_servicio", columnDefinition = "estado_cuarto_servicio_enum not null")
-    private Object nombreEstadoServicio;
-*/
+    private EstadoCuartoServicioEnum nombreEstadoServicio;
+
 }
