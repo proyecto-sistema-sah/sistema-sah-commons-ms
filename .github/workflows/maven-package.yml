@@ -38,6 +38,14 @@ jobs:
           github_token: ${{ secrets.TOKEN }}
           default: patch
 
+      # Set new version in pom.xml based on the tag
+      - name: Set version in pom.xml
+        run: |
+          NEW_VERSION=${{ steps.bump_version.outputs.new_tag }}
+          echo "Setting new version $NEW_VERSION in pom.xml"
+          mvn versions:set -DnewVersion=$NEW_VERSION
+          echo "New version set in pom.xml"
+
       # Build y deploy usando Maven sin necesidad de actualizar el pom.xml en el repositorio
       - name: Build and Deploy with Maven
         run: |
