@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sistema.sah</groupId>
 	<artifactId>commons</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>commons</name>
 	<description>Libreria general del sistema donde estarán las entidades globales y funciones globales </description>
 	<packaging>jar</packaging>
