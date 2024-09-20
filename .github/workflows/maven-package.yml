@@ -30,21 +30,15 @@ jobs:
           mkdir -p ~/.m2
           echo "<settings><servers><server><id>github</id><username>${{ secrets.USERNAME }}</username><password>${{ secrets.TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
 
-      - name: Incrementar version
-        run: |
-          CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          NEW_VERSION=$(echo $CURRENT_VERSION | awk -F. -v OFS=. '{$NF = $NF + 1 ; print}')
-          mvn versions:set -DnewVersion=$NEW_VERSION
-          echo "New version: $NEW_VERSION"
+      # Incrementamos la versión usando una acción externa
+      - name: Bump version and push tag
+        id: bump_version
+        uses: mathieudutour/github-tag-action@v6.0
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          default: patch
 
+      # Build y deploy usando Maven sin necesidad de actualizar el pom.xml en el repositorio
       - name: Build and Deploy with Maven
         run: |
           mvn clean deploy -Pproduction
-
-      - name: Push updated version
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add pom.xml
-          git commit -m "Increment version to $NEW_VERSION"
-          git push origin main
