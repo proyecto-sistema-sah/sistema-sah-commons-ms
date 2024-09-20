@@ -1,7 +1,9 @@
 package com.sistema.sah.commons.entity;
 
+import com.sistema.sah.commons.helper.enums.EstadoFacturacionEnum;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
@@ -26,11 +28,9 @@ public class FacturacionEntity {
     @JoinColumn(name = "codigo_usuario_fk", nullable = false)
     private UsuarioEntity codigoUsuarioEntityFk;
 
-/*
- TODO [Reverse Engineering] create field to map the 'estado_facturacion' column
- Available actions: Define target Java type | Uncomment as is | Remove column mapping
+    @Enumerated(EnumType.STRING) // Almacenar el valor como una cadena de texto en la base de datos
     @ColumnDefault("'PENDIENTE'")
     @Column(name = "estado_facturacion", columnDefinition = "estado_facturacion_enum not null")
-    private Object estadoFacturacion;
-*/
+    private EstadoFacturacionEnum estadoFacturacion;
+
 }

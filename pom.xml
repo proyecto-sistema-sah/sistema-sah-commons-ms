@@ -51,11 +51,6 @@
 	</scm>
 
 	<properties>
-		<!-- Versión de desarrollo (dev) -->
-		<dev.version>0.0.1-SNAPSHOT</dev.version>
-
-		<!-- Versión de producción (main) -->
-		<prod.version>0.0.1</prod.version>
 		<java.version>22</java.version>
 		<org.mapstruct.version>1.6.2</org.mapstruct.version>
 	</properties>
@@ -70,11 +65,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -101,14 +94,18 @@
 				<version>3.13.0</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>22</source> <!-- depending on your project -->
-					<target>22</target> <!-- depending on your project -->
 					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>1.18.32</version>
+						</path>
 						<path>
 							<groupId>org.mapstruct</groupId>
 							<artifactId>mapstruct-processor</artifactId>
 							<version>${org.mapstruct.version}</version>
 						</path>
+
 						<!-- other annotation processors -->
 					</annotationProcessorPaths>
 				</configuration>
