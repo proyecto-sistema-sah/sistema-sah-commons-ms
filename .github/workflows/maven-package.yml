@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Revision del codigo
         uses: actions/checkout@v3
 
@@ -18,6 +19,13 @@ jobs:
           java-version: 22
           distribution: 'adopt'
           cache: maven
+
+
+      # Aquí configuramos Maven para que use las credenciales de GitHub
+      - name: Set up Maven settings
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings><servers><server><id>github</id><username>${{ secrets.USERNAME }}</username><password>${{ secrets.TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
 
       - name: Incrementar version
         run: |
