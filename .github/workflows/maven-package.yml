@@ -30,8 +30,13 @@ jobs:
           mkdir -p ~/.m2
           echo "<settings><servers><server><id>github</id><username>${{ secrets.USERNAME }}</username><password>${{ secrets.TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
 
+      # Ejecutar pruebas y compilar el proyecto
+      - name: Build and Test
+        run: mvn clean verify
+
       # Incrementamos la versión usando una acción externa
       - name: Bump version and push tag
+        if: success()
         id: bump_version
         uses: mathieudutour/github-tag-action@v6.0
         with:
@@ -40,6 +45,7 @@ jobs:
 
       # Set new version in pom.xml based on the tag
       - name: Set version in pom.xml
+        if: success()
         run: |
           NEW_VERSION=${{ steps.bump_version.outputs.new_tag }}
           echo "Setting new version $NEW_VERSION in pom.xml"
@@ -48,5 +54,7 @@ jobs:
 
       # Build y deploy usando Maven sin necesidad de actualizar el pom.xml en el repositorio
       - name: Build and Deploy with Maven
+        if: success()
         run: |
           mvn clean deploy -Pproduction
+
