@@ -21,7 +21,13 @@
 			<name>GitHub Packages</name>
 			<url>https://maven.pkg.github.com/proyecto-sistema-sah/sistema-sah-commons-ms</url> <!-- Cambia USER/REPO a los correctos -->
 		</repository>
+		<snapshotRepository>
+			<id>github</id>
+			<name>GitHub Packages Snapshots</name>
+			<url>https://maven.pkg.github.com/proyecto-sistema-sah/sistema-sah-commons-ms</url>
+		</snapshotRepository>
 	</distributionManagement>
+
 	<url/>
 	<licenses>
 		<license>
@@ -43,30 +49,18 @@
 		<url>https://github.com/proyecto-sistema-sah/sistema-sah-commons-ms</url>
 		<tag>HEAD</tag>
 	</scm>
-	<profiles>
-		<!-- Perfil para producción (rama main) -->
-		<profile>
-			<id>production</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>prod</value>
-				</property>
-			</activation>
-			<distributionManagement>
-				<repository>
-					<id>github-production</id>
-					<name>GitHub Packages (Producción)</name>
-					<url>https://maven.pkg.github.com/proyecto-sistema-sah/sistema-sah-commons-ms-prod</url>
-				</repository>
-			</distributionManagement>
-			<properties>
-				<!-- Propiedades específicas para producción -->
-				<spring.profiles.active>prod</spring.profiles.active>
-			</properties>
-		</profile>
 
-		<!-- Perfil para desarrollo (rama dev) -->
+	<properties>
+		<!-- Versión de desarrollo (dev) -->
+		<dev.version>0.0.1-SNAPSHOT</dev.version>
+
+		<!-- Versión de producción (main) -->
+		<prod.version>0.0.1</prod.version>
+		<java.version>22</java.version>
+		<org.mapstruct.version>1.6.2</org.mapstruct.version>
+	</properties>
+	<profiles>
+		<!-- Perfil para la rama dev -->
 		<profile>
 			<id>development</id>
 			<activation>
@@ -75,23 +69,25 @@
 					<value>dev</value>
 				</property>
 			</activation>
-			<distributionManagement>
-				<repository>
-					<id>github-development</id>
-					<name>GitHub Packages (Desarrollo)</name>
-					<url>https://maven.pkg.github.com/proyecto-sistema-sah/sistema-sah-commons-ms-dev</url>
-				</repository>
-			</distributionManagement>
 			<properties>
-				<!-- Propiedades específicas para desarrollo -->
-				<spring.profiles.active>dev</spring.profiles.active>
+				<project.version>${dev.version}</project.version>
+			</properties>
+		</profile>
+
+		<!-- Perfil para la rama main (producción) -->
+		<profile>
+			<id>production</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>prod</value>
+				</property>
+			</activation>
+			<properties>
+				<project.version>${prod.version}</project.version>
 			</properties>
 		</profile>
 	</profiles>
-	<properties>
-		<java.version>22</java.version>
-		<org.mapstruct.version>1.6.2</org.mapstruct.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
