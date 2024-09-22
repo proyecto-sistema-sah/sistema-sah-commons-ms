@@ -1,17 +1,20 @@
 package com.sistema.sah.commons.dto;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 @Data
-public class EstadoCuartoServicioDto {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class EstadoCuartoServicioDto implements Serializable {
     private Integer id;
 
-/*
- TODO [Reverse Engineering] create field to map the 'nombre_estado_servicio' column
- Available actions: Define target Java type | Uncomment as is | Remove column mapping
-    @ColumnDefault("'ACTIVO'")
-    @Column(name = "nombre_estado_servicio", columnDefinition = "estado_cuarto_servicio_enum not null")
-    private Object nombreEstadoServicio;
-*/
+    private EstadoCuartoServicioDto nombreEstadoServicio;
+
 }

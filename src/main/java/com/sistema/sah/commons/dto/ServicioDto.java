@@ -1,11 +1,18 @@
 package com.sistema.sah.commons.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Data
-public class ServicioDto {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ServicioDto implements Serializable {
     private String codigoServicio;
 
     private String nombreServicio;

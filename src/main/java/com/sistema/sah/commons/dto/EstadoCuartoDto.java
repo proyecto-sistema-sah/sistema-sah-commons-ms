@@ -1,17 +1,20 @@
 package com.sistema.sah.commons.dto;
 
-import jakarta.persistence.*;
+import com.sistema.sah.commons.helper.enums.EstadoCuartoEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 @Data
-public class EstadoCuartoDto {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class EstadoCuartoDto implements Serializable {
     private Integer id;
 
-/*
- TODO [Reverse Engineering] create field to map the 'nombre_estado_cuarto' column
- Available actions: Define target Java type | Uncomment as is | Remove column mapping
-    @ColumnDefault("'LIBRE'")
-    @Column(name = "nombre_estado_cuarto", columnDefinition = "estado_cuarto_enum not null")
-    private Object nombreEstadoCuarto;
-*/
+    private EstadoCuartoEnum nombreEstadoCuarto;
+
 }
