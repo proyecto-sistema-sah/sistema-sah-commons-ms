@@ -1,5 +1,6 @@
 package com.sistema.sah.commons.dto;
 
+import com.sistema.sah.commons.helper.enums.EstadoCuartoServicioEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +16,6 @@ import java.io.Serializable;
 public class EstadoCuartoServicioDto implements Serializable {
     private Integer id;
 
-    private EstadoCuartoServicioDto nombreEstadoServicio;
+    private EstadoCuartoServicioEnum nombreEstadoServicio;
 
 }
