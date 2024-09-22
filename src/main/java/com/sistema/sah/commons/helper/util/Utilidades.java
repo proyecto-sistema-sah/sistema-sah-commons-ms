@@ -32,7 +32,7 @@ public class Utilidades {
     }
 
     public static String generarCodigo(TipoUsuarioEnum inicial){
-        return new StringBuilder().append(inicial.getDescripcion()).append(1000 + new Random().nextInt(9000)).toString();
+        return new StringBuilder().append(inicial.getInicial()).append(1000 + new Random().nextInt(9000)).toString();
     }
 
 
