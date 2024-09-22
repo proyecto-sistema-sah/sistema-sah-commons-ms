@@ -1,12 +1,14 @@
 package com.sistema.sah.commons.helper.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sistema.sah.commons.helper.enums.TipoUsuarioEnum;
 
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Random;
 
 public class Utilidades {
 
@@ -28,6 +30,11 @@ public class Utilidades {
             throw new IllegalArgumentException("Error de conversión de tipos: " + e.getMessage(), e);
         }
     }
+
+    public static String generarCodigo(TipoUsuarioEnum inicial){
+        return new StringBuilder().append(inicial.getDescripcion()).append(1000 + new Random().nextInt(9000)).toString();
+    }
+
 
     public static <T> T convertJsonToDto(File jsonFile, Class<T> dtoClass) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
