@@ -27,7 +27,7 @@ public class UsuarioEntity {
     @Column(name = "contrasena", nullable = false, length = 30)
     private String contrasena;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "tipo_usuario_fk", nullable = false)
     private TipoUsuarioEntity tipoUsuarioEntityFk;
 
