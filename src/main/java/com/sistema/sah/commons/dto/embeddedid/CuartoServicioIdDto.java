@@ -1,14 +1,18 @@
 package com.sistema.sah.commons.dto.embeddedid;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.hibernate.Hibernate;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Data
-public class CuartoServicioIdDto {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class CuartoServicioIdDto implements Serializable {
     private String codigoCuartoFk;
 
     private String codigoServicioFk;

@@ -1,10 +1,18 @@
 package com.sistema.sah.commons.dto;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 @Data
-public class TipoServicioDto {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class TipoServicioDto implements Serializable {
     private Integer id;
 
     private String nombreTipoServicio;

@@ -1,10 +1,18 @@
 package com.sistema.sah.commons.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 
+import java.io.Serializable;
+
 @Data
-public class RespuestaGeneralDto {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class RespuestaGeneralDto implements Serializable {
 
     private HttpStatus status;
 

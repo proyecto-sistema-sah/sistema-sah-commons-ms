@@ -1,13 +1,14 @@
 package com.sistema.sah.commons.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.io.Serializable;
 
 @Data
-@EqualsAndHashCode(callSuper = false)  // Añadir esta línea
+@Builder
 @NoArgsConstructor  // Añadir si necesitas un constructor sin argumentos explícito
-public class UsuarioDto {
+@AllArgsConstructor
+public class UsuarioDto implements Serializable {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String codigoUsuario;
