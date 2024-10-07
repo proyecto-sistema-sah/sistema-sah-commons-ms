@@ -13,7 +13,7 @@ public class BlackListTokenEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "black_list_token_id_gen")
-    @SequenceGenerator(name = "black_list_token_id_gen", sequenceName = "black_list_token_id_gen", allocationSize = 1)
+    @SequenceGenerator(name = "black_list_token_id_gen", sequenceName = "black_list_token_id_seq", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Integer id;
 
