@@ -6,6 +6,9 @@ import com.sistema.sah.commons.helper.enums.TipoUsuarioEnum;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
@@ -35,6 +38,9 @@ public class Utilidades {
         return new StringBuilder().append(inicial.getInicial()).append(1000 + new Random().nextInt(9000)).toString();
     }
 
+    public static LocalDateTime convertToLocalDateTime(Date date) {
+        return LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
+    }
 
     public static <T> T convertJsonToDto(File jsonFile, Class<T> dtoClass) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
