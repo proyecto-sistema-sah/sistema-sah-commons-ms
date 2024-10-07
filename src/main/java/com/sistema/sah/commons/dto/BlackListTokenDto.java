@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder
-@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
 public class BlackListTokenDto {
