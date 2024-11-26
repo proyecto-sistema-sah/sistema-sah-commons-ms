@@ -21,6 +21,8 @@ public class AlimentoDto implements Serializable {
 
     private String detalleAlimento;
 
+    private String codigoImagen;
+
     private TipoAlimentoDto tipoAlimentoDtoFk;
 
 }

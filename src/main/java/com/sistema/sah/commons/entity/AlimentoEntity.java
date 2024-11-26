@@ -22,6 +22,9 @@ public class AlimentoEntity {
     @Column(name = "detalle_alimento", length = Integer.MAX_VALUE)
     private String detalleAlimento;
 
+    @Column(name = "codigo_imagen")
+    private String codigoImagen;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "tipo_alimento_fk", nullable = false)
     private TipoAlimentoEntity tipoAlimentoEntityFk;
