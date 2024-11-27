@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
@@ -17,10 +18,10 @@ public class ReservaEntity {
     private String codigoReserva;
 
     @Column(name = "fecha_inicio_reserva", nullable = false)
-    private LocalDateTime fechaInicioReserva;
+    private LocalDate fechaInicioReserva;
 
     @Column(name = "fecha_fin_reserva", nullable = false)
-    private LocalDateTime fechaFinReserva;
+    private LocalDate fechaFinReserva;
 
     @Column(name = "fecha_creacion_reserva", nullable = false)
     private LocalDateTime fechaCreacionReserva;

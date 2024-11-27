@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,9 +17,9 @@ import java.time.LocalDateTime;
 public class ReservaDto implements Serializable {
     private String codigoReserva;
 
-    private LocalDateTime fechaInicioReserva;
+    private LocalDate fechaInicioReserva;
 
-    private LocalDateTime fechaFinReserva;
+    private LocalDate fechaFinReserva;
 
     private LocalDateTime fechaCreacionReserva;
 
