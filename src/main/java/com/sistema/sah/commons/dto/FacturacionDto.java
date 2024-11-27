@@ -37,6 +37,8 @@ public class FacturacionDto implements Serializable {
      */
     private LocalDateTime fechaCreacionFacturacion;
 
+    private String urlPdf;
+
     /**
      * Reserva asociada a la facturación.
      * Este campo representa la reserva vinculada a la factura, usando un objeto {@link ReservaDto}.

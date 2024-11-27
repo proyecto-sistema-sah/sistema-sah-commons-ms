@@ -37,6 +37,9 @@ public class FacturacionEntity {
     @Column(name = "fecha_creacion_facturacion", nullable = false)
     private LocalDateTime fechaCreacionFacturacion;
 
+    @Column(name = "url_pdf", nullable = false)
+    private String urlPdf;
+
     /**
      * Reserva asociada a la facturación.
      * Este campo establece una relación de muchos a uno con la entidad `ReservaEntity`. Indica que cada facturación está asociada
