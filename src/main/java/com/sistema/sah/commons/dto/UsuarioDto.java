@@ -10,7 +10,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class UsuarioDto implements Serializable {
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String codigoUsuario;
 
     private String nombresUsuario;
