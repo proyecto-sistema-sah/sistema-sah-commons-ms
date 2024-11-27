@@ -114,10 +114,17 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>jar</goal>
+							<goal>javadoc</goal>
+							<goal>jar</goal> <!-- Generar JAR de documentación -->
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<source>17</source> <!-- Versión de Java utilizada -->
+					<encoding>UTF-8</encoding>
+					<version>true</version> <!-- Incluir versión de las clases -->
+					<excludePackageNames>com.sistema.sah.commons.helper.mapper</excludePackageNames> <!-- Excluir un paquete específico -->
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
