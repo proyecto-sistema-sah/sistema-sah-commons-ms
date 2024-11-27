@@ -9,7 +9,7 @@ import lombok.Data;
 public class UsuarioEntity {
     @Id
     @SequenceGenerator(name = "usuario_id_gen", sequenceName = "tipo_usuario_id_tipo_usuario_seq", allocationSize = 1)
-    @Column(name = "codigo_usuario", nullable = false, length = 5)
+    @Column(name = "codigo_usuario", nullable = false, length = 7)
     private String codigoUsuario;
 
     @Column(name = "nombres_usuario", nullable = false, length = 80)

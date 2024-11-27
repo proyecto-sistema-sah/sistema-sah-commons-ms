@@ -12,10 +12,10 @@ import java.util.Objects;
 public class UsuarioAlimentoIdEntity implements java.io.Serializable {
     private static final long serialVersionUID = -5044658269293265562L;
 
-    @Column(name = "codigo_usuario_fk", nullable = false, length = 5)
+    @Column(name = "codigo_usuario_fk", nullable = false, length = 7)
     private String codigoUsuarioFk;
 
-    @Column(name = "codigo_alimento_fk", nullable = false, length = 5)
+    @Column(name = "codigo_alimento_fk", nullable = false, length = 7)
     private String codigoAlimentoFk;
 
     @Override

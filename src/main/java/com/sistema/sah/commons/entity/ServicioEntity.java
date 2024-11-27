@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class ServicioEntity {
     @Id
     @SequenceGenerator(name = "servicio_id_gen", sequenceName = "estado_usuario_servicio_id_estado_usuario_servicio_seq", allocationSize = 1)
-    @Column(name = "codigo_servicio", nullable = false, length = 5)
+    @Column(name = "codigo_servicio", nullable = false, length = 7)
     private String codigoServicio;
 
     @Column(name = "nombre_servicio", nullable = false, length = 50)

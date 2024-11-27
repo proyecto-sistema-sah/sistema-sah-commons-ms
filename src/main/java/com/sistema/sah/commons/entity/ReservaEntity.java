@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
 public class ReservaEntity {
     @Id
     @SequenceGenerator(name = "reserva_id_gen", sequenceName = "estado_usuario_servicio_id_estado_usuario_servicio_seq", allocationSize = 1)
-    @Column(name = "codigo_reserva", nullable = false, length = 5)
+    @Column(name = "codigo_reserva", nullable = false, length = 7)
     private String codigoReserva;
 
     @Column(name = "fecha_inicio_reserva", nullable = false)

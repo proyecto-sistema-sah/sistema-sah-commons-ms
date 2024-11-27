@@ -11,10 +11,10 @@ import java.util.Objects;
 @Embeddable
 public class CuartoServicioIdEntity implements java.io.Serializable {
     private static final long serialVersionUID = -7108195826643245286L;
-    @Column(name = "codigo_cuarto_fk", nullable = false, length = 5)
+    @Column(name = "codigo_cuarto_fk", nullable = false, length = 7)
     private String codigoCuartoFk;
 
-    @Column(name = "codigo_servicio_fk", nullable = false, length = 5)
+    @Column(name = "codigo_servicio_fk", nullable = false, length = 7)
     private String codigoServicioFk;
 
     @Override

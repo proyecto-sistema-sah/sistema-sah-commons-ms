@@ -10,10 +10,10 @@ import java.math.BigDecimal;
 @Table(name = "cuarto")
 public class CuartoEntity {
     @Id
-    @Column(name = "codigo_cuarto", nullable = false, length = 5)
+    @Column(name = "codigo_cuarto", nullable = false, length = 7)
     private String codigoCuarto;
 
-    @Column(name = "numero_cuarto", nullable = false, length = 5)
+    @Column(name = "numero_cuarto", nullable = false, length = 7)
     private String numeroCuarto;
 
     @Column(name = "codigo_imagen_cuarto", nullable = false, length = Integer.MAX_VALUE)

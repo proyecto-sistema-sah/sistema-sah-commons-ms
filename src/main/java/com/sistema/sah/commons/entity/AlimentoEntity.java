@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @Table(name = "alimento")
 public class AlimentoEntity {
     @Id
-    @Column(name = "codigo_alimento", nullable = false, length = 5)
+    @Column(name = "codigo_alimento", nullable = false, length = 7)
     private String codigoAlimento;
 
     @Column(name = "tiempo_preparacion_alimento", nullable = false)
